@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+section{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.s1{
+    background: #0984e3;
+}
+.s2{
+    background: #ff7675;
+}
+.s3{
+    background: #55efc4;
+}
+.s4{
+    background: #2d3436;
+}
+.iconbtn{
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    font-size: 30px;
+    position: relative;
+    border-radius: 50%;
+}
+.iconbtn::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+.iconbtn::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    z-index: 0;
+}
+.s1 .iconbtn, .s2 .iconbtn{
+    color: #fff;
+}
+.s1 .iconbtn::after{
+    border: 4px dashed;
+}
+.s1 .iconbtn:hover::after{
+    animation: ro 7s linear infinite;
+}
+
+
+.s2 .iconbtn{
+    border: 4px solid;
+}
+.s2 .iconbtn:hover{
+    animation: ro 2s linear infinite;
+}
+
+
+
+.s3 .iconbtn{
+    border: 4px solid #fff;
+    color: #55efc4;
+}
+.s3 .iconbtn::after{
+    background: #fff;
+    transition: all linear .3s;
+}
+.s3 .iconbtn:hover::after{
+    transform: scale(.9);
+}
+
+
+
+.s4 .iconbtn{
+    border: 4px solid #fff;
+    color: #2d3436;
+}
+.s4 .iconbtn::after{
+    background: #fff;
+    transition: all linear .4s;
+}
+.s4 .iconbtn:hover::after{
+    transform: scale(1.3);
+    opacity: 0;
+}
+.s4 .iconbtn:hover{
+    color: #fff;
+}
+
+@keyframes ro{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
